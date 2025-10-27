@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Zoho Mail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+        .login-container {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 420px;
+            margin: 1.5rem; 
+            overflow: hidden; 
+        }
+
+        .login-header {
+            background-color: #fdfdfd;
+            padding: 2rem 2.5rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #222;
+        }
+        
+        .logo-text span {
+            color: #e43d30; 
+        }
+
+        .login-form {
+            padding: 2.5rem;
+        }
+        
+        .form-header {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-header p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #007bff; 
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+        }
+        .form-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .form-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .form-footer .signup-link {
+            margin-top: 1rem;
+            color: #555;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #aaa;
+            margin: 2rem 0;
+            font-size: 0.85rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .btn-social {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #fff;
+            transition: background-color 0.2s, border-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-social:hover {
+            background-color: #f9f9f9;
+            border-color: #bbb;
+        }
+
+        .icon-placeholder {
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        
+        .icon-google { color: #DB4437; }
+        .icon-linkedin { color: #0A66C2; }
+        .icon-apple { color: #000000; }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+
+        <header class="login-header">
+            <div class="logo-text">ZOHO<span>.</span></div>
+        </header>
+
+        <main class="login-form">
+            <div class="form-header">
+                <h1>Sign in</h1>
+                <p>to access your Zoho Mail account</p>
+            </div>
+            
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label for="email">Email or mobile number</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign In</button>
+
+                <div class="form-footer">
+                    <a href="#">Forgot Password?</a>
+                    <p class="signup-link">Don't have an account? <a href="./signup.html">Sign up now</a></p>
+                </div>
+            </form>
+
+            <div class="divider">OR</div>
+
+            <div class="social-login">
+                <button class="btn-social">
+                    <span class="icon-placeholder icon-google">G</span> Sign in with Google
+                </button>
+                <button class="btn-social">
+                    <span class="icon-placeholder icon-linkedin">in</span> Sign in with LinkedIn
+                </button>
+                <button class="btn-social">
+                    <span class="icon-placeholder icon-apple"><img src="https://images.seeklogo.com/logo-png/15/1/apple-logo-png_seeklogo-158010.png" alt="" height="20px"></span> Sign in with Apple
+                </button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

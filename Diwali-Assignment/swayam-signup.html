@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Ministry of Education</title>
+    <style>
+   
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1; 
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            height: 45px;
+        }
+
+        .header-logo-emblem {
+            height: 50px;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-text span:first-child {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #222;
+        }
+
+        .header-text span:last-child {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .login-section {
+            padding: 40px 0;
+        }
+        .alert-box {
+            background-color: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .alert-box strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .login-wrapper {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .social-login,
+        .email-login {
+            flex: 1;
+        }
+
+        .separator-v {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            color: #aaa;
+            font-weight: 500;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            flex: 0 0 auto; 
+        }
+        
+        .separator-v span {
+            padding: 10px 0;
+        }
+
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-top: 20px; 
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #fff;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .social-btn:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .social-btn img {
+            height: 20px;
+            width: 20px;
+        }
+
+        .btn-microsoft {
+            background-color: #2F2F2F;
+            color: white;
+            border-color: #2F2F2F;
+        }
+        
+        .btn-microsoft:hover {
+            background-color: #444;
+        }
+
+        .separator-h {
+            display: none; 
+            text-align: center;
+            color: #aaa;
+            font-weight: 500;
+            margin: 25px 0;
+        }
+
+        .email-login h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #000;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .forgot-password {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .recaptcha-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            margin-bottom: 25px;
+        }
+        
+        .recaptcha-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .recaptcha-checkbox input {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .recaptcha-logo {
+            text-align: center;
+        }
+        
+        .recaptcha-logo img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .recaptcha-logo p {
+            font-size: 0.7rem;
+            color: #777;
+        }
+        .btn-submit {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn-submit:hover {
+            background-color: #e0e0e0;
+        }
+
+        .or-separator-email {
+            text-align: center;
+            color: #aaa;
+            font-weight: 500;
+            margin: 25px 0;
+        }
+        
+        .signup-link {
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .signup-link a {
+            font-weight: bold;
+        }
+        footer {
+            padding: 25px 0;
+            background-color: #f8f8f8;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .footer-links a {
+            margin-right: 15px;
+            color: #555;
+        }
+        
+        .footer-copyright {
+            text-align: right;
+        }
+        @media (max-width: 900px) {
+            .login-wrapper {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .separator-v {
+                display: none; 
+            }
+            
+            .separator-h {
+                display: block;
+            }
+            
+            .social-login {
+                padding-top: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .email-login h2 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .footer-copyright {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_logo.png" alt="Swayam Logo" class="header-logo">
+            <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/mhrd_logo.png" alt="Ministry of Education Emblem" class="header-logo-emblem">
+            <div class="header-text">
+                <span>Ministry of Education</span>
+                <span>Government of India</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container login-section">
+            <div class="alert-box">
+                <strong>Important:</strong>
+                We've upgraded our authentication system from May 2025. If you were using 'Sign in with user name', then please confirm your sign-up with same email id once again. <a href="#">Click here</a> to follow steps to create account with 'Sign up with email'. Inconvenience is highly regretted. The users with social login's (Gmail or Microsoft) are not affected by this change.
+            </div>
+            <div class="login-wrapper">
+                <div class="social-login">
+                    <button class="social-btn btn-google">
+                        <img src="https://blog.logomaster.ai/hs-fs/hubfs/google-logo-2015-icon.jpg?width=672&height=454&name=google-logo-2015-icon.jpg" alt="Google G">
+                        Sign in with Google
+                    </button>
+                    <button class="social-btn btn-microsoft">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShBu0cnozmDr454aSmHhedZltGVgU8fTfZwA&s" alt="Microsoft M">
+                        Sign in with Microsoft
+                    </button>
+                    <div class="separator-h">OR</div>
+                </div>
+                <div class="separator-v"><span>OR</span></div>
+                <div class="email-login">
+                    <h2>Sign in with your Email</h2>
+                    
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        
+                        <a href="#" class="forgot-password">Forgot your password?</a>
+                        <div class="recaptcha-placeholder">
+                            <div class="recaptcha-checkbox">
+                                <input type="checkbox" id="recaptcha-check">
+                                <label for="recaptcha-check">I'm not a robot</label>
+                            </div>
+                            <div class="recaptcha-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" alt="reCAPTCHA logo">
+                                <p>Privacy - Terms</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Sign in</button>
+                        
+                        <div class="or-separator-email">OR</div>
+                        
+                        <p class="signup-link">
+                            Don't have an account? <a href="#">Sign up now</a>
+                        </p>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">Terms of Use</a> |
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-copyright">
+                Copyright © 2025 | Ministry of Education (Govt of India)
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
