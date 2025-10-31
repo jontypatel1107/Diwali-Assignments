@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Zoho Mail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 3rem 1rem; 
+        }
+        .container {
+            width: 100%;
+            max-width: 28rem; 
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem; 
+        }
+        .header h1 {
+            font-size: 1.875rem;
+            font-weight: 700; 
+            color: #dc2626;
+        }
+        .header h2 {
+            margin-top: 1rem; 
+            font-size: 1.5rem;
+            font-weight: 600; 
+        }
+        .header p {
+            margin-top: 0.5rem; 
+            font-size: 0.875rem; 
+            color: #4b5563; 
+        }
+        .signup-form {
+            background-color: #ffffff; 
+            padding: 2rem; 
+            border-radius: 1rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem; 
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.25rem; 
+            font-size: 0.875rem;
+            font-weight: 500; 
+            color: #374151; 
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem; 
+            border: 1px solid #d1d5db; 
+            border-radius: 0.5rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            color: #1f2937;
+        }
+        .form-input::placeholder {
+            color: #9ca3af; 
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #ef4444; 
+            box-shadow: 0 0 0 2px #ef4444; 
+        }
+        
+        .email-input-group {
+            display: flex;
+            border-radius: 0.5rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+        }
+        .email-input-group .form-input {
+            flex: 1 1 0%;
+            min-width: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+            position: relative; 
+        }
+        .email-input-group .email-domain {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1rem ;
+            border: 1px solid #d1d5db; 
+            border-left: 0;
+            background-color: #f9fafb; 
+            color: #4b5563; 
+            font-size: 0.875rem; 
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        .password-hint {
+            margin-top: 0.25rem; 
+            font-size: 0.75rem; 
+            color: #6b7280; 
+        }
+        .terms-group {
+            display: flex;
+            align-items: flex-start;
+            padding-top: 0.5rem; 
+        }
+        .form-checkbox {
+            height: 1rem; 
+            width: 1rem;
+            border: 1px solid #d1d5db; 
+            border-radius: 0.25rem; 
+            accent-color: #dc2626; 
+            margin-top: 0.125rem;
+            flex-shrink: 0;
+        }
+        .form-checkbox:focus {
+            box-shadow: 0 0 0 2px #ef4444; 
+            outline: none;
+        }
+        .terms-label {
+            margin-left: 0.75rem; 
+            font-size: 0.875rem;
+            color: #4b5563; 
+        }
+        a {
+            color: #dc2626; 
+            font-weight: 500; 
+            text-decoration: none;
+        }
+        a:hover {
+            color: #b91c1c; 
+            text-decoration: underline; 
+        }
+
+        
+        .submit-btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1rem; 
+            border: 1px solid transparent;
+            border-radius: 0.5rem; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+            font-size: 1rem; 
+            font-weight: 500; 
+            color: #ffffff; 
+            background-color: #dc2626; 
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+            margin-top: 0.5rem; 
+        }
+        .submit-btn:hover {
+            background-color: #b91c1c; 
+        }
+        .submit-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.5); 
+        }
+
+        
+        .login-link {
+            margin-top: 1.5rem; 
+            text-align: center;
+            font-size: 0.875rem; 
+            color: #4b5563;
+        }
+        
+       
+        @media (min-width: 640px) { 
+            .signup-form {
+                padding: 2.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <h1>ZOHO Mail</h1>
+            <h2>Create your new account</h2>
+            <p>Start your professional email journey.</p>
+        </div>
+        <form class="signup-form" action="#" method="POST">
+            <input type="hidden" name="remember" value="true">
+            
+            <div class="form-group-container">
+                <div class="form-group">
+                    <label for="full-name" class="form-label">Full Name</label>
+                    <input id="full-name" name="full-name" type="text" autocomplete="name" required
+                           class="form-input"
+                           placeholder="e.g., John Appleseed">
+                </div>
+
+                <div class="form-group">
+                    <label for="email-username" class="form-label">Desired Email</label>
+                    <div class="email-input-group">
+                        <input id="email-username" name="email-username" type="text" required
+                           class="form-input"
+                           placeholder="your-username">
+                        <span class="email-domain">
+                            @zohomail.com
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="new-password" required
+                           class="form-input"
+                           placeholder="Create a strong password">
+                    <p class="password-hint">Must be at least 8 characters.</p>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required
+                           class="form-input"
+                           placeholder="Re-type your password">
+                </div>
+                <div class="form-group terms-group">
+                    <input id="terms" name="terms" type="checkbox" required
+                           class="form-checkbox">
+                    <label for="terms" class="terms-label">
+                        I agree to the 
+                        <a href="#">Terms of Service</a> 
+                        and 
+                        <a href="#">Privacy Policy</a>.
+                    </label>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="submit-btn">
+                    Sign Up
+                </button>
+            </div>
+        </form>
+        <p class="login-link">
+            Already have an account?
+            <a href="./login.html">
+                Log in
+            </a>
+        </p>
+    </div>
+
+</body>
+</html>
+
